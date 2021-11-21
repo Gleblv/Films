@@ -43,13 +43,9 @@ const personalMovieDB = {
     },
     writeYourGenres: function() {
         for(let i = 1; i <= 3; i++) {
-            let genre = prompt(`Ваш любимый жанр под номером ${i}`);
-
-            if (genre == null || genre == "") {
-                console.log("Нкорректный ответ");
+            personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером №${i + 1}?`);
+            if (personalMovieDB.genres[i] == null || personalMovieDB.genres[i] == "") {
                 i--;
-            } else {
-                personalMovieDB.genres[i - 1] = genre; // Написали i - 1, потому что последовательность в массиве должна начинаться с 0
             };
         };
 
